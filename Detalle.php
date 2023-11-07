@@ -88,8 +88,13 @@
                 $nombre = $jugador["nombre"];
                 $src = "'../img/" . $jugador["nombre_imagen"] . "'";
             }
-            if($stmt->rowCount() == 0 || !isset($_SESSION["usuario"])){
-                header("Location: ../Login.php");
+            if($stmt->rowCount() == 0){
+                if(!isset($_SESSION["usuario"])){
+                    header("Location: ../Login.php");
+                }else{
+                    header("Location: ../Welcome.php");
+                }
+                
             }
         }catch(PDOException $ex){
             return "error: " . $ex->getMessage();

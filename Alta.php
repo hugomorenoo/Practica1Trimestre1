@@ -2,21 +2,21 @@
     session_start();
     $err = "";
     if(empty($_POST["nombre"]) || empty($_POST["posicion"]) || empty($_POST["valor"])){
-        $err .= "Debes de rellenar todos los campos";
+        $err .= "Debes de rellenar todos los campos.";
     }
     if(!is_string($_POST["nombre"]) || !is_string($_POST["posicion"]) || !is_numeric($_POST["goles"]) || !is_numeric($_POST["valor"])){
-        $err .= "Los tipos de datos no son correctos";
+        $err .= "Los tipos de datos no son correctos.";
     }
     if(is_uploaded_file($_FILES["imagen"]["tmp_name"])){
         if($_FILES["imagen"]["size"] > 65535){
-            $err .= "Archivo demasiado grande";
+            $err .= " Archivo demasiado grande.";
         }
         if($_FILES["imagen"]["type"] == "image/png"){
             $tipo = ".png";
         } else if ($_FILES["imagen"]["type"] == "image/jpeg"){
             $tipo = ".jpg";
         }else{
-            $err .= "Solo se permiten archivos jpg o png " . $_FILES["imagen"]["type"];
+            $err .= " Solo se permiten archivos jpg o png ";
         }
     }else{
         echo "no subida";
