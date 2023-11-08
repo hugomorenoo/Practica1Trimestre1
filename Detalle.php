@@ -88,11 +88,11 @@
                 $nombre = $jugador["nombre"];
                 $src = "'../img/" . $jugador["nombre_imagen"] . "'";
             }
-            if($stmt->rowCount() == 0){
+            if($stmt->rowCount() == 0 || !isset($_SESSION["usuario"])){
                 if(!isset($_SESSION["usuario"])){
-                    header("Location: ../Login.php");
+                    header("Location: http://localhost/Proyecto/Login.php");
                 }else{
-                    header("Location: ../Welcome.php");
+                    header("Location: http://localhost/Proyecto/Welcome.php");
                 }
                 
             }

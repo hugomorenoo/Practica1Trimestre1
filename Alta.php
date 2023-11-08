@@ -30,7 +30,6 @@
         $img = $nombre . $tipo;
         $ruta = "img/" . $img;
         move_uploaded_file($imgblob,$ruta);
-        echo "subida";
         try{
             require_once("ConectarBD.php");
             $bd = new ConectarBD();
@@ -45,7 +44,6 @@
             $stmt->bindParam(":img2", $fp, PDO::PARAM_LOB);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            echo $stmt->rowCount();
             if($stmt->rowCount() > 0){
                 header("location: Welcome.php");
             } else{
