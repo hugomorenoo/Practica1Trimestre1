@@ -196,8 +196,11 @@ button{
     border-radius: 8px;
     color: white;
     border:none;
-    width: 50%;
+    width: 70%;
     font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #detalles{
