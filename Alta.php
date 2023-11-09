@@ -1,7 +1,7 @@
 <?php
     session_start();
     $err = "";
-    if(empty($_POST["nombre"]) || empty($_POST["posicion"]) || empty($_POST["valor"])){
+    if(empty($_POST["nombre"]) || empty($_POST["posicion"]) || empty($_POST["valor"]) || empty($_POST["imagen"])){
         $err .= "Debes de rellenar todos los campos.";
     }
     if(!is_string($_POST["nombre"]) || !is_string($_POST["posicion"]) || !is_numeric($_POST["goles"]) || !is_numeric($_POST["valor"])){
